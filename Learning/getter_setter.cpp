@@ -24,7 +24,7 @@ class Employee{
             return name;
         }
         void set_newname(string &s){                                            // The Setter Function used inside the body of the class 
-            name=s;
+            name=s;                                     // we can copy the string value just like an integer data type
         }
 };
 int main()
