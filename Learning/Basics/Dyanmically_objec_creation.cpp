@@ -26,8 +26,9 @@ class Student{
 int main()
 {
   Student  *s3 = new Student;
-  (*s3).age=21;
-  (*s3).roll=22;
-  (*s3).display();
+  (*s3).age=21;               // this can also be written as  s3-> age=21;
+  (*s3).roll=22;              // this can also be written as s3->roll =22; // both codes work similarly 
+  cout<<"Age is \t"<<s3->age<<endl;       // look here i used this code to acces the value of the variable age 
+  cout<<"Roll Number is\t"<<s3->roll<<endl;   //look here i used this code to access the value of the variable  roll
   return 0;
 }
