@@ -89,6 +89,8 @@ int main()
     // suppose i created a new object and now i want that object to look like the s2 object all the contents s2 should be copied to the new object that i created 
     // type 1: static object and passing a static object as argument static object
     Student s5(s2);  /// this internally works as s5.Student(s2) ;
+    // another way of writing the above code is by given statement "Student s5 = s2;" this line of code will work same as the above line of code 
+
     /*how it works internally ->->-> When you use a copy constructor in C++, it is used to create a new object by making a copy of an existing object.
      The copy constructor is invoked when you initialize a new object with an existing object of the same type, or when you pass an object by value as a function argument.
     Internally, the copy constructor is responsible for creating a new object and initializing it with the values of an existing object. 
@@ -96,6 +98,8 @@ int main()
     The copy constructor does not invoke the constructor of the object in which another object is passed as a parameter. 
     Instead, it creates a new object by making a copy of the existing object, using the existing object's data members to initialize the new object's data members. 
     The new object is a completely separate instance of the class, with its own memory allocation and its own set of member variables.*/  
+
+    
     s5.display();
     s5.input();
     s5.display();
@@ -122,7 +126,7 @@ int main()
     s10.display();
     cout<<endl;
     // now lets see if the assignment operator works properly or not 
-    s9=s10;
+    s9=s10;  // this uses copy assignment operator  
     cout<<"Displaying the data of object s10"<<endl;
     s10.display();
     cout<<endl;
