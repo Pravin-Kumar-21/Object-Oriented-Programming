@@ -12,8 +12,9 @@ class Student{
               this->name= new char[strlen(name)+1];
               strcpy(this->name,name);
          }
-         Student(Student &s)                 // creating our own new copy constructor that will do a Deep copy instead of doing a shallow copy
-         {
+         Student(Student const &s)                 // creating our own new copy constructor that will do a Deep copy instead of doing a shallow copy
+         {                                                          // why i am writing const before the before the student parameter we cannot make any changes in the student object we can only read the 
+                                                                    // the  value of the student of object without making any changes 
             this->age= s.age;
             this->name= new char[strlen(s.name)+1];
             strcpy(this->name,s.name);
