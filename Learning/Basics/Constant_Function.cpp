@@ -86,4 +86,7 @@ int main() {
 		so what are constant functions? Answer is-> Constant Functions are those functions that does not Change any property of the current object
 	*/
 	f3.setNumerator(10);
+	// so firstly we were getting the error in three things two errors in the line 78 code and one error in the line 89 the two errors in line no 78 was because 
+	// we did not make the getnumerator and the getdenominator functions constant since we are not making any changes in the object through those functions so we can 
+	// definitely make thsose functions as a constant function
 }
