@@ -17,11 +17,11 @@ class Fraction {
 			this -> denominator = denominator;
 		}
 
-		int getNumerator() const {
+		int getNumerator() const {							// ideally this function does not change the value of the object so we can make this functions as a constant function
 			return numerator;
 		}
 		
-		int getDenominator() const {
+		int getDenominator() const {					// similarly in this function we are not making any changes to the object so we say that this function is also a constant function
 			return denominator;
 		}
 
@@ -78,8 +78,12 @@ int main() {
 	cout << f3.getNumerator() << " " << f3.getDenominator() << endl;  				// lets have the looks of this statement 
 	/* we find out that the  above line of code does not work this is because the compiler plays safely here since the constant object can only read we  cannot write
 		so compiler is not awware of the content of the methods/Functions that the class contain so in case if the metthod changes something of a constnt object the 
-		its meaning would be invaluable so to avoid this problem */
+		its meaning would be invaluable so to avoid this problem the compiler avoids / rejects the Functionn Call */
 	
-
+	
+	/*Now the question arises is whom can the constant object call or what methods can be called from the constant objects
+	 	so the answer to this question is that constant object can call only constant functions or constant methods 
+		so what are constant functions? Answer is-> Constant Functions are those functions that does not Change any property of the current object
+	*/
 	f3.setNumerator(10);
 }
