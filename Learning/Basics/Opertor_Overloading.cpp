@@ -15,7 +15,7 @@ class Fraction{
             this->denominator=denominator;
         }
         void print(){
-            cout<<numerator<<"/"<<denominator<<endl;
+            cout<<numerator<<"/"<<denominator;
         }
         void  simplyfy(){
             int gcd =1;                                                                                                
@@ -68,24 +68,37 @@ class Fraction{
             else
                 return false;
         }
+        // now let us learn how we will overload unary operators in the like ++ or -- pre increment or post increment
+        Fraction operator++(){
+            this->numerator=this->numerator+this->denominator;
+            this->denominator=this->denominator;
+            this->simplyfy();
+            return *this;
+        }
 };
 int main() {
 	Fraction f1(10, 2);
 	Fraction f2(15, 4);
-	Fraction f3 = f1.add(f2);
+	f1.print(); cout<< "  +  "  ;f2.print();
+    cout<<endl;
+	Fraction f3 = f1.add(f2);           // called data members that accepts object as 
+	
+	cout<< "The Sum is "; f3.print(); cout<<endl;
 	Fraction f4 = f1 + f2;
-	f1.print();
-	f2.print();
-	f3.print();
-	f4.print();
+	f4.print(); cout<<endl;
     Fraction f5 = f1 *f2;
-	f5.print();
+	f5.print(); cout<<endl;
+    ++f5;                                           // so we can see that the f5 object has been incremented and the operator overloading works here smoothly
+    f5.print(); cout<<endl;
+    // now in incerement we see that the we get the in this type of incrementation also ++(++) 
+    // lets see if it works fine or not 
+    Fraction f6=(++(++f5));
+    f6.print(); cout<<endl; // so we see that this thing also works perfectly 
 
 	if(f1 == f2) {
 		cout << "Equal" << endl;
 	}
 	else {
 		cout << "Not equal " << endl;
-		
 	}
-  }
+}
