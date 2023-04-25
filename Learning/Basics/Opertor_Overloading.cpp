@@ -68,12 +68,21 @@ class Fraction{
             else
                 return false;
         }
-        // now let us learn how we will overload unary operators in the like ++ or -- pre increment or post increment
+        // now let us learn how we will overload unary operators in the like ++ or -- pre increment 
         Fraction operator++(){
             this->numerator=this->numerator+this->denominator;
             this->denominator=this->denominator;
             this->simplyfy();
             return *this;
+        }
+        // Now we will learn about the post increment operator overloading 
+        Fraction operator++(int){                                       // in this we have passed the argument int it is just because we want to differentiate between pre- increment and a post-increment 
+            Fraction fnew(numerator,denominator);
+            numerator=numerator+denominator;
+            simplyfy();
+            fnew,simplyfy();
+            return fnew;
+
         }
 };
 int main() {
@@ -88,11 +97,12 @@ int main() {
 	f4.print(); cout<<endl;
     Fraction f5 = f1 *f2;
 	f5.print(); cout<<endl;
-    ++f5;                                           // so we can see that the f5 object has been incremented and the operator overloading works here smoothly
-    f5.print(); cout<<endl;
+   // ++f5;                                           // so we can see that the f5 object has been incremented and the operator overloading works here smoothly
+   // f5.print(); cout<<endl;
     // now in incerement we see that the we get the in this type of incrementation also ++(++) 
-    // lets see if it works fine or not 
-    Fraction f6=(++(++f5));
+    // now lets see if we can work with the post increment
+    Fraction f6=f5++;
+    f5.print();cout<<endl;
     f6.print(); cout<<endl; // so we see that this thing also works perfectly 
 
 	if(f1 == f2) {
