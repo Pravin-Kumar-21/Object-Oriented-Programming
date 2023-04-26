@@ -76,14 +76,24 @@ class Fraction{
             return *this;
         }
         // Now we will learn about the post increment operator overloading 
+            // In this post-increment operator nesting is not allowed // this will show error 
         Fraction operator++(int){                                       // in this we have passed the argument int it is just because we want to differentiate between pre- increment and a post-increment 
             Fraction fnew(numerator,denominator);
             numerator=numerator+denominator;
             simplyfy();
-            fnew,simplyfy();
+            fnew.simplyfy();
             return fnew;
 
         }
+    // now we will learn how to overload operator of this type " += " 
+    Fraction&  operator+=(Fraction const &f2){
+        int num=((numerator*(f2.denominator)) +(f2.numerator)*denominator);
+        int den=(denominator*f2.denominator);
+        numerator=num;
+        denominator=den;
+        simplyfy();
+        return *this;
+    }
 };
 int main() {
 	Fraction f1(10, 2);
@@ -104,7 +114,12 @@ int main() {
     Fraction f6=f5++;
     f5.print();cout<<endl;
     f6.print(); cout<<endl; // so we see that this thing also works perfectly 
-
+    // Using the operator += 
+    cout<<"Now we are adding nesting Fraction by using the operator += "<<endl;
+    (f1+=f2)+=f2;           // so we can see that by just passing the reference we can do nesing overloading method 
+    f1.print();cout<<endl;
+    cout<<"Now we are checking the value of F2 and lets see that if it gets updated or not"<<endl;
+    f2.print();cout<<endl;
 	if(f1 == f2) {
 		cout << "Equal" << endl;
 	}
