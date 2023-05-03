@@ -22,7 +22,7 @@ class DynamicArray{
             this->capacity = d.capacity;
 
         }
-        void operator=(DynamicArray const &d){                          // operator overloading
+        void operator=(DynamicArray const &d){                          // operator overloading with = for Dynamic Array
               this->data=new int[d.capacity];
             for(int i=0;i<d.nextIndex;i++)
             {
