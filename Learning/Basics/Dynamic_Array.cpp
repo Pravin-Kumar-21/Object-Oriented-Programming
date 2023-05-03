@@ -52,16 +52,16 @@ class DynamicArray{
             return -1;
         }
         }
-        void add_element(int i , int  element){
-            if(nextIndex== capacity){
-                int *newData = new int[2*capacity];
-                for(int i=0;i<capacity;i++){
-                    newData[i]=data[i];
-                }
-                delete [] data;
-                data =newData;
-                capacity *= 2;
-            }
+        void add_element(int i , int  element){                 // add element to a certain index
+        if(i<nextIndex){
+        data[i] = element;
+        }
+        else if(i==nextIndex){
+            add(element);
+        }
+        else {
+            return ;
+        }
         }
         void Display(){
             for (int i=0;i<nextIndex;i++){
@@ -77,12 +77,11 @@ int main(){
     d1.add(30);
     d1.add(40);
     d1.add(50);
-
+    DynamicArray d2(d1);
+    d1.add_element(1,200);
     d1.Display();
-    d1.add_element(){
-
-    }
-
-
-
+    d2.Display();
+    DynamicArray d3;
+    d3 = d1;
+    d3.Display();
 }
