@@ -1,5 +1,3 @@
-![Access Specifiers OOP](https://user-images.githubusercontent.com/94698587/236525163-73495662-cea9-46c6-bed5-272e51614a3b.jpg)
-
 The standard C++ library contains a large number of header files, each providing various functions and classes for different purposes. 
 Here are some common header files and their functionalities:
 
