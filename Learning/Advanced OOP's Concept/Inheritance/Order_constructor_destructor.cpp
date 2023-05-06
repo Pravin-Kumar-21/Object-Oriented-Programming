@@ -27,7 +27,7 @@ class vehicle{
 class car : public vehicle{                         
     public:                                                           
     int numGears;
-    car(int x) : vehicle(x) {                                                    // so this not the correct way to pass value we should always prefer variable fo these 
+    car(int x) : vehicle(x) {                                                    // so this not the correct way to pass value we should always prefer variable to pass as an argument
         cout<<"Class car Constructor called"<<endl;
     }
     ~car(){
@@ -43,14 +43,15 @@ class car : public vehicle{
 };
 class HondaCity : public car{
     public:
-        HondaCity(){
-            cout<< "Honda City constructor called "<<endl;
-        }
+        HondaCity(): car(5) {                                                           // compiler implicitly calls the default constructor but we have not initialised any default constructor of this class  car  
+            cout<< "Honda City constructor called "<<endl;      // we can remove this problem by expilcitly calling the car class parameterised constructor infront of hondacity constructor 
+        }                                                                                // this is how we solve the constructor error 
         ~HondaCity(){
             cout<<"Honda City Destructor Called"<<endl;
         }
 };
 int main(){
-    car c(5);
 
+// creating object of class Honda
+HondaCity h;
 }
