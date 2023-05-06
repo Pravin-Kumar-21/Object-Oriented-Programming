@@ -27,7 +27,7 @@ class vehicle{
 class car : public vehicle{                         
     public:                                                           
     int numGears;
-    car() : vehicle(5) {
+    car(int x) : vehicle(x) {                                                    // so this not the correct way to pass value we should always prefer variable fo these 
         cout<<"Class car Constructor called"<<endl;
     }
     ~car(){
@@ -41,7 +41,16 @@ class car : public vehicle{
         cout<<"Numgears  "<<numGears<<endl;
     }
 };
+class HondaCity : public car{
+    public:
+        HondaCity(){
+            cout<< "Honda City constructor called "<<endl;
+        }
+        ~HondaCity(){
+            cout<<"Honda City Destructor Called"<<endl;
+        }
+};
 int main(){
-    car  c;
+    car c(5);
 
 }
