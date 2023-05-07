@@ -50,3 +50,4 @@ int main()
                                                                                //  a.Student :: print() this is the correct way to call the member function with same name inside multiple parent clasess which is inherited
                                                                               // it is also applicable in case of the data members
 }
+// Use the next Code For hybrid inheritance . Learn Hybrid inheritance from Hybrid Inheritance.cpp
