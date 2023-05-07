@@ -35,33 +35,25 @@ class Vehicle {
 class Truck : virtual public Vehicle {                  // parent class is vehicle
 	public :
 
-		Truck() {
+		Truck() : Vehicle(4) {
 			cout << "Truck's constructor " << endl;
 		}
 };
-class Car : virtual public Vehicle {                     // parent class is Vehicle    
+class Car : virtual public Vehicle{                     // parent class is Vehicle    
                                                                         // to avoid twice inheritation  of same member function via different derived classes whose parent classes has that  we use the keyword "virtual"
 	public :                                                        // by this we can say that we will not copy the dual members functions inside class that is derived from this class..
 		int numGears;
-
-		Car() {
+		Car() : Vehicle(3) {                                                     
 			cout << "Car's default constructor " << endl;
 		}
-
-
 		/*
 		Car(int x, int y) : Vehicle(x) {
 			cout << "Car's constructor " << endl;
 			numGears = y;
 		}*/
-
 		~Car() {                                            
 			cout << "Car's Destructor " << endl;
 		}
-
-
-		
-
 		void print() {
 			cout << "NumTyres : " << numTyres << endl;
 			cout << "Color : " << color << endl;
@@ -71,7 +63,7 @@ class Car : virtual public Vehicle {                     // parent class is Vehi
 };
 class Bus : public Car, public Truck {                              // First car class constructor will be called and secondly Truck class constructor will be called..
 	public :
-		Bus()  {
+		Bus() : Vehicle(5)  {                                                   
 			cout << "Bus's constructor " << endl;
 		}
 		
@@ -79,11 +71,15 @@ class Bus : public Car, public Truck {                              // First car
 			cout << "BUs" << endl;
 		}
 };
+//so we can see that when we created an object the constructor of class bus  value is intialised this proves that the vlaue constructor is being called by the bus class 
+//since we have used the virtual keyword that is why 
 int main(){
-    Bus b;
+    Bus b;                  
     b.print();
 
 }
+
+// so now we will see if the default constructor is not available / or we needd to call the paremeterised constructor then how we will call 
 
 // So basically what is a Virtual Class ???
 /*Answer is -> In C++, a virtual base class is a class that is used as a base class for other derived classes, and is designed to be shared among those derived classes.
