@@ -3,6 +3,7 @@ using namespace std;
 void test();
 class Bus{
     public:
+    // now any function created inside class bus will bbe the friend of class truck
     void print();    // this function is a friend of class truck so it can access its private property
     
 };
@@ -13,9 +14,9 @@ class truck{
     int y;
     public:
     int z;
-    friend void Bus :: print();  // here we decalared a freind function which can access the private data members of class 
-    // so with the help this "friend" keyword we can access the private property of class truck
-    friend void test(); // creating a freind function which is globally declared
+   // now we will learn to create a friend class by which we can achieve multiple friend functions in efficient manner
+   friend class Bus;   // now we made bus class friend of class truck so bus class can access all the property of class truck but truck class cannot access any property of class bus
+   friend void test();
 };  
 // so whenever we are creating a friend function we cannot implement it inside the class we have to declare it outside the class
 void Bus ::print(){
