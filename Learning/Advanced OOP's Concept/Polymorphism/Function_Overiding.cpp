@@ -30,5 +30,5 @@ int main()
     v2->print();        // here v2 is pointing to the derived class car but when we call the print function it calls the  member functions of the base class
     // here the compiler does not checks  that the object is pointing to which class , it  just sees the pointer is which class type  for eg "base class" so it calls the base class member functions
 
-/*So the above Function Overriding method is also a Compile  time Polymorphism Example*/
+/*So the above Function Overriding method is also a Compile  time Polymorphism Example */
 }
